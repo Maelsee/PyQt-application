@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2 class="title-text"><span class="title-prefix">HITS算法</span>算法由来</h2>
+<a class="edit-icon j-edit-link" data-edit-dl="2" href="javascript:;"><em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_edit-lemma"></em></a>
+</div>
+<div class="para" label-module="para">HITS 算法是由康奈尔大学( Cornell University ) 的Jon Kleinberg 博士于1997 年首先提出的,为IBM 公司阿尔马登研究中心( IBM Almaden Research Center) 的名为“CLEVER”的研究项目中的一部分。</div><div class="anchor-list">
+<a name="3" class="lemma-anchor para-title" ></a>
+<a name="sub6379279_3" class="lemma-anchor " ></a>
+<a name="具体解释" class="lemma-anchor " ></a>
+</div><div class="para-title level-2" label-module="para-title">
+<h2 class="title-text"><span class="title-prefix">HITS算法</span>具体解释</h2>
+<a class="edit-icon j-edit-link" data-edit-dl="3" href="javascript:;"><em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_edit-lemma"></em></a>
+</div>
+<div class="para" label-module="para">按照HITS算法，用户输入关键词后，算法对返回的匹配页面计算两种值，一种是枢纽值（Hub Scores），另一种是权威值(Authority Scores),这两种值是互相依存、互相影响的。所谓枢纽值，指的是页面上所有导出链接指向页面的权威值之和。权威值是指所有导入<a target=_blank href="/item/%E9%93%BE%E6%8E%A5">链接</a>所在的页面中枢纽之和。</div>
+<div class="para" label-module="para">一个网页重要性的分析的算法。</div>
+<div class="para" label-module="para">通常HITS算法是作用在一定范围的，比如一个以程序开发为主题网页，指向另一个以程序开发为主题的网页，则另一个网页的重要性就可能比较高，但是指向另一个购物类的网页则不一定。</div>
+<div class="para" label-module="para">在限定范围之后根据网页的出度和入度建立一个<a target=_blank href="/item/%E7%9F%A9%E9%98%B5">矩阵</a>，通过矩阵的迭代运算和定义收敛的阈值不断对两个向量Authority和Hub值进行更新直至<a target=_blank href="/item/%E6%94%B6%E6%95%9B/5957628" data-lemmaid="5957628">收敛</a>。</div><div class="anchor-list">
+<a name="4" class="lemma-anchor para-title" ></a>
+<a name="sub6379279_4" class="lemma-anchor " ></a>
+<a name="Hits算法" class="lemma-anchor " ></a>
+</div><div class="para-title level-2" label-module="para-title">
+<h2 class="title-text">Hits算法</h2>
+<a class="edit-icon j-edit-link" data-edit-dl="4" href="javascript:;"><em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_edit-lemma"></em></a>
+</div>
+<div class="anchor-list">
+<a name="4_1" class="lemma-anchor para-title" ></a>
+<a name="sub6379279_4_1" class="lemma-anchor " ></a>
+<a name="描述" class="lemma-anchor " ></a>
+<a name="4-1" class="lemma-anchor " ></a>
+</div><div class="para-title level-3" label-module="para-title">
+<h3 class="title-text"><span class="title-prefix">HITS算法</span>描述</h3>
+</div>
+<div class="para" label-module="para">HITS<sup class="sup--normal" data-sup="1">
+[1]</sup><a class="sup-anchor" name="ref_[1]_6379279">&nbsp;</a>
+(Hyperlink – Induced Topic Search) 算法是利用HubPAuthority的搜索方法,</div>
+<div class="para" label-module="para">具体算法如下:</div>
+<div class="para" label-module="para">将查询q提交给基于关键字查询的<a target=_blank href="/item/%E6%A3%80%E7%B4%A2">检索</a>系统，从返回结果页面的集合中取前n个<a target=_blank href="/item/%E7%BD%91%E9%A1%B5">网页</a>(如n=200)，作为根<a target=_blank href="/item/%E9%9B%86%E5%90%88">集合</a>(root set)，记为S，则S满足：</div>
+<div class="para" label-module="para">1.S中的网页数量较少</div>
+<div class="para" label-module="para">2.S中的网页是与查询q相关的网页</div>
+<div class="para" label-module="para">3.S中的网页包含较多的权威(Authority)网页</div>
+<div class="para" label-module="para">通过向S 中加入被S 引用的网页和引用S 的网页,将S 扩展成一个更大的集合T. 以T 中的Hub 网页为顶点集V1 ,以权威网页为顶点集V2 。</div>
+<div class="para" label-module="para">V1 中的网页到V2 中的网页的超链接为边集E ,形成一个二分有向图. 对V1 中的任一个顶点v ,用h ( v) 表示网页v 的Hub 值,且h ( v)收敛;对V2 中的顶点u ,用a ( u) 表示网页的Authority 值。</div>
+<div class="para" label-module="para">开始时h ( v) = a ( u) = 1 ,对u 执行I 操作,修改它的a ( u) ,对v执行O操作,修改它的h ( v) ,然后规范化a ( u),h ( v) ,如此不断的重复计算下面的I操作和O操作,直到a ( u),h(v)收敛 。</div>
+<div class="para" label-module="para">其中I操作:a ( u) = Σh ( v) ;O 操作: h ( v) = Σa ( u) 。每次迭代对a ( u) 、h ( v) 进行规范化处理: a ( u) = a ( u)/Σ[ a ( q) ]2 ; h ( v) = h ( v)/Σ[ h ( q) ]2 。</div><div class="anchor-list">
+<a name="4_2" class="lemma-anchor para-title" ></a>
+</div>
+</body>
+</html>

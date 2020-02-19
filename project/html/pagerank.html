@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="anchor-list">
+<a name="1" class="lemma-anchor para-title" ></a>
+<a name="sub844648_1" class="lemma-anchor " ></a>
+<a name="概念" class="lemma-anchor " ></a>
+</div><div class="para-title level-2" label-module="para-title">
+<h2 class="title-text"><span class="title-prefix">google pagerank</span>概念</h2>
+</div>
+<div class="para" label-module="para">PageRank是<a target=_blank href="/item/Google">Google</a>专有的<a target=_blank href="/item/%E7%AE%97%E6%B3%95">算法</a>，用于衡量特定网页相对于<a target=_blank href="/item/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E">搜索引擎</a>索引中的其他网页而言的重要程度。它由Larry Page 和 Sergey Brin在20世纪90年代后期发明。PageRank实现了将链接价值概念作为排名因素。</div>
+<div class="para" label-module="para">PageRank将对页面的<a target=_blank href="/item/%E9%93%BE%E6%8E%A5">链接</a>看成投票，指示了重要性。</div><div class="anchor-list">
+<a name="2" class="lemma-anchor para-title" ></a>
+<a name="sub844648_2" class="lemma-anchor " ></a>
+<a name="算法" class="lemma-anchor " ></a>
+</div><div class="para-title level-2" label-module="para-title">
+<h2 class="title-text"><span class="title-prefix">google pagerank</span>算法</h2>
+</div>
+<div class="para" label-module="para">PageRank让链接来&quot;投票&quot;</div>
+<div class="para" label-module="para">一个页面的“得票数”由所有链向它的页面的重要性来决定，到一个页面的超链接相当于对该页投一票。一个页面的PageRank是由所有链向它的页面（“链入页面”）的重要性经过递归算法得到的。一个有较多链入的页面会有较高的等级，相反如果一个页面没有任何链入页面，那么它没有等级。<br/>　　2005年初，Google为网页链接推出一项新属性<a target=_blank href="/item/nofollow">nofollow</a>，使得网站管理员和网站作者可以做出一些Google不计票的链接，也就是说这些链接不算作&quot;投票&quot;。<a target=_blank href="/item/nofollow">nofollow</a>的设置可以抵制评论垃圾。</div>
+<div class="para" label-module="para">假设一个由4个页面组成的小团体：<b>A</b>，<b>B</b>，<b>C</b>和<b>D</b>。如果所有页面都链向<b>A</b>，那么<b>A</b>的<b>PR</b>（PageRank）值将是<b>B</b>，<b>C</b>及<b>D</b>的Pagerank总和。</div>
+<div class="para" label-module="para"><div class="layoutinline formula" style="width:230px;display: inline;">
+<img align="absmiddle" alt="" title="" height="18" width="230" src="https://gss3.bdstatic.com/-Po3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D230/sign=3477ea678126cffc6d2ab8b189004a7d/63d0f703918fa0ec8bc8f8f3259759ee3c6ddbc5.jpg"/>
+</div></div>
+<ul class="para-list list-paddingleft-2"></ul><div class="para" label-module="para">继续假设<b>B</b>也有链接到<b>C</b>，并且<b>D</b>也有链接到包括<b>A</b>的3个页面。一个页面不能投票2次。所以<b>B</b>给每个页面半票。以同样的逻辑，<b>D</b>投出的票只有三分之一算到了<b>A</b>的PageRank上。</div>
+<div class="para" label-module="para"><div class="layoutblockcenter formula" style="width:248px;float: none; display: block; margin-left: auto; margin-right: auto;">
+<img align="absmiddle" alt="" title="" height="35" width="248" src="https://gss2.bdstatic.com/-fo3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D248/sign=d17a12f698504fc2a65fb701dddce7f0/cdbf6c81800a19d8426a1afb30fa828ba71e46e7.jpg"/>
+</div></div>
+<ul class="para-list list-paddingleft-2"></ul><div class="para" label-module="para">换句话说，根据链出总数平分一个页面的<b>PR</b>值。</div>
+<div class="para" label-module="para"><div class="layoutblockcenter formula" style="width:248px;float: none; display: block; margin-left: auto; margin-right: auto;">
+<img align="absmiddle" alt="" title="" height="40" width="248" src="https://gss0.bdstatic.com/94o3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D248/sign=764adf43aa773912c0268265c0188675/63d0f703918fa0ec88b3fdf3259759ee3c6ddbdc.jpg"/>
+</div></div>
+<ul class="para-list list-paddingleft-2"></ul><div class="para" label-module="para">最后，所有这些被换算为一个百分比再乘上一个系数。由于“没有向外链接的页面”传递出去的PageRank会是0，所以，Google通过数学系统给了每个页面一个最小值：</div>
+<div class="para" label-module="para"><div class="layoutblockcenter formula" style="width:380px;float: none; display: block; margin-left: auto; margin-right: auto;">
+<img align="absmiddle" alt="" title="" height="44" width="380" src="https://gss2.bdstatic.com/-fo3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D380/sign=c9b964c936fae6cd08b4ad693fb20f9e/dbb44aed2e738bd4ed8e37cfa28b87d6267ff9a5.jpg"/>
+</div></div>
+<ul class="para-list list-paddingleft-2"></ul><div class="para" label-module="para">说明：在Sergey Brin和Lawrence Page的1998年原文中给每一个页面设定的最小值是1-d，而不是这里的</div>
+<div class="para" label-module="para">(1-d)/N。 所以一个页面的PageRank是由其他页面的PageRank计算得到。Google不断的重复计算每个页面的PageRank。如果给每个页面一个随机PageRank值（非0），那么经过不断的重复计算，这些页面的PR值会趋向于稳定，也就是收敛的状态。这就是搜索引擎使用它的原因。</div><div class="anchor-list">
+<a name="3" class="lemma-anchor para-title" ></a>
+<a name="sub844648_3" class="lemma-anchor " ></a>
+<a name="指标" class="lemma-anchor " ></a>
+</div><div class="para-title level-2" label-module="para-title">
+<h2 class="title-text"><span class="title-prefix">google pagerank</span>指标</h2>
+</div>
+<div class="para" label-module="para">Google工具条上的PageRank指标从0到10。它似乎是一个对数标度算法，细节未知。PageRank是Google的商标，其技术亦已经申请专利。</div>
+<div class="para" label-module="para">PageRank近似于一个用户，是指在<a target=_blank href="/item/Internet">Internet</a>上随机地单击链接将会到达特定网页的可能性。通常，能够从更多地方到达的网页更为重要，因此具有更高的PageRank。每个到其他网页的链接，都增加了该网页的PageRank。具有较高PageRank的网页一般都是通过更多其他网页的链接而提高的。</div>
+<div class="para" label-module="para">为了查看站点PageRank，请安装GOOGLE工具条并启用PageRank特性，或者在firefox安装SearchStatus插件。但是请注意，GOOGLE所指示的PageRank是个<a target=_blank href="/item/%E7%BC%93%E5%86%B2%E5%80%BC">缓冲值</a>，通常是过时的。</div><div class="anchor-list">
+<a name="4" class="lemma-anchor para-title" ></a>
+<a name="sub844648_4" class="lemma-anchor " ></a>
+<a name="更新频率" class="lemma-anchor " ></a>
+</div><div class="para-title level-2" label-module="para-title">
+<h2 class="title-text"><span class="title-prefix">google pagerank</span>更新频率</h2>
+</div>
+<div class="para" label-module="para">PageRank值每年只发布几次，有时就得使用过时信息，因此，PageRank并不是一个非常精确的度量。GOOGLE自己也似乎在使用更精确的值来进行排名。</div>
+<div class="para" label-module="para">在GOOGLE使用来构造搜索结果页面的采集算法中，PageRank只是其中的一个因素。有可能在特定查询下，具有较低PageRank的页面仍然能够排在具有较高PageRank的页面前面。PageRank也不一定是相关的，它使用链接来衡量整体受欢迎程度，而不是使用相关主题。GOOGLE在计算搜索排名时也考虑链接的相关程度，因此PageRank不应该成为<a target=_blank href="/item/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E8%90%A5%E9%94%80">搜索引擎营销</a>的唯一重点。构建相关链接，通常也自然会带来较高的PageRank。此外，为了提高PageRank而特意构建太多的不相关链接也有可能损害站点的排名，因为GOOGLE试图检测并对不相关链接降分，认为这种链接是用于提高排名得分的。</div>
+<div class="para" label-module="para">PageRank还被用户广泛认为是<a target=_blank href="/item/%E7%AB%99%E7%82%B9">站点</a>可靠的因素，因为用户倾向于相信带有较高值的站点更为著名或权威。当然，这就是PageRank所设计的目标。这个概念是GOOGLE所认可的，因此GOOGLE通过减少或清零PageRank来惩罚那些垃圾或不相关站点。</div><div class="anchor-list"></div>
+</body>
+</html>
